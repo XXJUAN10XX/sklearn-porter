@@ -58,7 +58,7 @@ class Porter(object):
         # Determine the local version of sklearn:
         from sklearn import __version__ as sklearn_ver
         sklearn_ver = str(sklearn_ver).split('.')
-        sklearn_ver = [int(v) for v in sklearn_ver]
+        sklearn_ver = [int(v) for v in sklearn_ver[0:3]]
         major, minor = sklearn_ver[0], sklearn_ver[1]
         patch = sklearn_ver[2] if len(sklearn_ver) >= 3 else 0
         self.sklearn_ver = (major, minor, patch)
